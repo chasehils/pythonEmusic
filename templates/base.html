@@ -13,9 +13,7 @@
   <meta content="Beverly Hils beats and music for sale" name="description">
   <meta content="beverlyhils" name="music store, amazon, spotify, music">
 
-  <!-- Favicons -->
-  <link href="static/assets/img/favicon.png" rel="icon">
-  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
 
   <!-- Google Fonts -->
   {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,17 +22,17 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="static/assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+ 
+  <!-- ======================================================
   * Template Name: Tempo
   * Updated: Aug 30 2023 with Bootstrap v5.3.1
   * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
@@ -49,7 +47,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Beverly Hils Beats</a></h1>
+      <h1 class="logo"><a href="/">Beverly Hils Beats</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -62,9 +60,9 @@
           <li><a class="nav-link scrollto " href="#portfolio">Listen Now</a></li>
           <li class="dropdown">Sign In<a href="#"><span></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="">Sign Up</a></li>
-              <li><a href="">Login</a></li>
-              <li><a href="">Log out</a></li>
+              <li><a href="/auth/signup/">Sign Up</a></li>
+              <li><a href="/auth/login">Login</a></li>
+              <li><a href="/auth/logout">Log out</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
@@ -79,9 +77,9 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <h3>Welcome to <strong>My Music</strong></h3>
-      <h1>We're Creative Agency</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      
+      {% block content %}{% endblock content %}
+
       <a href="#about" class="btn-get-started scrollto">Listen Now</a>
     </div>
   </section><!-- End Hero -->
@@ -169,14 +167,14 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
 
   <!-- Template Main JS File -->
-  <script src="static/assets/js/main.js"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
 
 </body>
 
