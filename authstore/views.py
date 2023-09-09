@@ -1,11 +1,10 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.views.generic import View
 from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from .utils import TokenGenerator, generate_token
-
 from django.core.mail import EmailMessage
 from django.conf import settings
 
@@ -43,7 +42,7 @@ def signup(request):
         # email_message = EmailMessage(email_subject, message, settings.EMAIL_HOST_USER, [email])
         # email_message.send()
         messages.succcess(request, f"Activate your Account by clicking the link in your email {message}")
-        return redirect('/auth/login')
+        return redirect('/auth/login/')
     return render(request, "signup.html")
 
 
@@ -58,7 +57,7 @@ class ActivateAccountView(View):
             user.is_active=True
             user.save()
             messages.info(request, "Account Activated Successfully")
-            return redirect('auth/login')
+            return redirect('auth/login/')
         return render(request, 'auth/activatefail.html')
 
 
